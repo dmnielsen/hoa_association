@@ -13,10 +13,10 @@ def format_xticks(xtick, pos):
     # use custom ticker formatter to get $
     return '${:,.0f}'.format(xtick)
 
-def plot_data_mpl(data):
+def plot_data(data):
     y_pos = np.arange(len(data.index))
 
-    fig = plt.figure()
+    fig = plt.figure(figsize=(8.5,4.75))
     ax = fig.add_subplot(111)
     ax.set_frame_on(False)
     ax.barh(y_pos, data['Total'], align='center', color='grey', lw=0)
@@ -28,7 +28,6 @@ def plot_data_mpl(data):
     rects = ax.patches
     labels = ['{:.1f}%'.format(x*100) for x in data['Percent']]
     for rect, label in zip(rects, labels):
-        print(rect.get_x(), rect.get_width())
         height = rect.get_height()
         ax.text(rect.get_x() + rect.get_width() + 1000,
                 rect.get_y() + height/2,
@@ -43,8 +42,6 @@ def plot_data_mpl(data):
 
     formatter = FuncFormatter(format_xticks)
     ax.xaxis.set_major_formatter(formatter)
-    for tick in ax.get_xticks():
-        print(tick)
 
     ax.set_xlabel('Total cost in dollars ($)', size=14)
 
@@ -53,10 +50,9 @@ def plot_data_mpl(data):
     ax.yaxis.set_tick_params(labelsize=12)
 
     plt.set_cmap('Greys')
-    plt.savefig('2017_cost_plot_mpl.png', bbox_inches='tight')
+    plt.savefig('2017_cost_plot.pdf', bbox_inches='tight')
 
 
 if __name__ == '__main__':
     hoa_costs = import_data("2017_costs.csv")
-    print(hoa_costs)
-    plot_data_mpl(hoa_costs)
+    plot_data(hoa_costs)
