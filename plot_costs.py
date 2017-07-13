@@ -50,7 +50,7 @@ def plot_data(data):
     ax.yaxis.set_tick_params(labelsize=12)
 
     plt.set_cmap('Greys')
-    plt.savefig('2017_cost_plot.pdf', bbox_inches='tight')
+    plt.savefig('2017_plot.pdf', bbox_inches='tight')
 
 
 if __name__ == '__main__':
