@@ -63,9 +63,11 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("in_file", help="CSV file of expenses to plot")
-    parser.add_argument("-o", "--out_file", help="output filename for image, \
-                        default 'in_file_plot.pdf'")
+    parser.add_argument("out_file", nargs='?', help="output filename for \
+                        image, default 'in_file_plot.pdf'")
     args = parser.parse_args()
+    # doesn't seem to be a very simple way to make default dependant on
+    # another argument, so this will do for now.
     define_out_file()
 
     hoa_costs = import_data(args.in_file)
