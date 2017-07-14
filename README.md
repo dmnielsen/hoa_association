@@ -8,3 +8,5 @@ But at this moment, I don't have an Excel license, but I
 do know how to make good looking figures with matplotlib.
 The upside is, when I need to remake the figure next year,
 it will be easy.
+
+![A plot of hoa expenses](https://github.com/dmnielsen/hoa_association/blob/master/2017_plot.pdf)
