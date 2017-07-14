@@ -9,4 +9,4 @@ do know how to make good looking figures with matplotlib.
 The upside is, when I need to remake the figure next year,
 it will be easy.
 
-![Plot of HOA expenses](/blob/master/2017_plot.pdf)
+![Plot of HOA expenses](/2017_plot.pdf)
