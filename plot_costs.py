@@ -38,7 +38,7 @@ def plot_data(data):
     x_ticks = [x*1e4 for x in np.arange(0,9,2)]
     ax.set_xticks(x_ticks)
     ax.xaxis.set_ticks_position('bottom')
-    ax.xaxis.set_tick_params(width=2, length=7, color='grey', labelsize=12)
+    ax.xaxis.set_tick_params(width=2, length=7, color='lightgrey', labelsize=12)
 
     formatter = FuncFormatter(format_xticks)
     ax.xaxis.set_major_formatter(formatter)
