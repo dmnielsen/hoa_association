@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 import pandas as pd
 import numpy as np
+import argparse
 
 def import_data(filename):
     data = pd.read_csv(filename, sep=',', index_col=0)
@@ -56,5 +57,12 @@ def plot_data(data):
 
 
 if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("in_file", help="CSV file of expenses to plot")
+    parser.add_argument("--out_file", help="output filename for image, \
+                        default 'in_file_plot.pdf'")
+    args = parser.parse_args()
+
     hoa_costs = import_data("2017_costs.csv")
     plot_data(hoa_costs)
