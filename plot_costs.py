@@ -19,12 +19,14 @@ def plot_data(data):
     fig = plt.figure(figsize=(8.5,4.75))
     ax = fig.add_subplot(111)
     ax.set_frame_on(False)
-    ax.barh(y_pos, data['Total'], align='center', color='grey', lw=0)
 
+    # plot figure
+    ax.barh(y_pos, data['Total'], align='center', color='grey', lw=0)
     ax.set_yticks(y_pos)
     ax.set_yticklabels(data.index)
     ax.invert_yaxis()
 
+    # plot percentage labels
     rects = ax.patches
     labels = ['{:.1f}%'.format(x*100) for x in data['Percent']]
     for rect, label in zip(rects, labels):
