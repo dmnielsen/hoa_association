@@ -14,7 +14,7 @@ def format_xticks(xtick, pos):
     # use custom ticker formatter to get $
     return '${:,.0f}'.format(xtick)
 
-def plot_data(data):
+def plot_data(data, out_fn):
     y_pos = np.arange(len(data.index))
 
     fig = plt.figure(figsize=(8.5,4.75))
@@ -52,17 +52,21 @@ def plot_data(data):
     ax.yaxis.set_ticks_position('none')
     ax.yaxis.set_tick_params(labelsize=12)
 
-    plt.set_cmap('Greys')
-    plt.savefig('2017_plot.pdf', bbox_inches='tight')
+    plt.savefig(out_fn, format='pdf', bbox_inches='tight')
+
+def define_out_file():
+    if args.out_file is None:
+        args.out_file = args.in_file[:-4]+'_plot.pdf'
 
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument("in_file", help="CSV file of expenses to plot")
-    parser.add_argument("--out_file", help="output filename for image, \
+    parser.add_argument("-o", "--out_file", help="output filename for image, \
                         default 'in_file_plot.pdf'")
     args = parser.parse_args()
+    define_out_file()
 
     hoa_costs = import_data(args.in_file)
-    plot_data(hoa_costs)
+    plot_data(hoa_costs, args.out_file)
