@@ -64,5 +64,5 @@ if __name__ == '__main__':
                         default 'in_file_plot.pdf'")
     args = parser.parse_args()
 
-    hoa_costs = import_data("2017_costs.csv")
+    hoa_costs = import_data(args.in_file)
     plot_data(hoa_costs)
