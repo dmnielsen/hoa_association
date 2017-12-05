@@ -10,3 +10,6 @@ The upside is, when I need to remake the figure next year,
 it will be easy.
 
 ![Plot of HOA expenses](/2017_plot.pdf)
+
+**Update** (5 December 2017):
+I was correct. An updated figure was requested.
