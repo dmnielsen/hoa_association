@@ -52,11 +52,13 @@ def plot_data(data, out_fn):
     ax.yaxis.set_ticks_position('none')
     ax.yaxis.set_tick_params(labelsize=12)
 
-    plt.savefig(out_fn, format='pdf', bbox_inches='tight')
+    plt.savefig(out_fn, format=args.ext, bbox_inches='tight')
 
 def define_out_file():
     if args.out_file is None:
         args.out_file = args.in_file[:-4]+'_plot.pdf'
+    if args.ext:
+        args.out_file = '.'.join([args.out_file, args.ext])
 
 
 if __name__ == '__main__':
@@ -65,6 +67,8 @@ if __name__ == '__main__':
     parser.add_argument("in_file", help="CSV file of expenses to plot")
     parser.add_argument("out_file", nargs='?', help="output filename for \
                         image, default 'in_file_plot.pdf'")
+    parser.add_argument("ext", nargs='?', default='pdf',
+                        help="output format for image, default 'pdf'")
     args = parser.parse_args()
     # doesn't seem to be a very simple way to make default dependant on
     # another argument, so this will do for now.
