@@ -9,7 +9,7 @@ do know how to make good looking figures with matplotlib.
 The upside is, when I need to remake the figure next year,
 it will be easy.
 
-![Plot of HOA expenses](/2017_plot.pdf)
+![Plot of HOA expenses](/2018_fig.png)
 
 **Update** (5 December 2017):
 I was correct. An updated figure was requested.
