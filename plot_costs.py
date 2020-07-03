@@ -56,7 +56,7 @@ def plot_data(data, out_fn):
 
 def define_out_file():
     if args.out_file is None:
-        args.out_file = args.in_file[:-4]+'_plot.pdf'
+        args.out_file = args.in_file[:-4]+'_plot'
     if args.ext:
         args.out_file = '.'.join([args.out_file, args.ext])
 
