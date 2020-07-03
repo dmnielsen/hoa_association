@@ -13,3 +13,6 @@ it will be easy.
 
 **Update** (5 December 2017):
 I was correct. An updated figure was requested.
+
+**Update** (2 July 2020):
+Well, hello again github repo. It's been a while.
